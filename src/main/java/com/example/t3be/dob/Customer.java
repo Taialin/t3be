@@ -7,29 +7,26 @@ import javax.persistence.*;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    
     private Long id;
-    
+
     private String name;
-    
+
     private String surname;
-    
+
     private String sex;
-    
+
     private int age;
-    
+
     private String telephone;
-    
+
     private int card;
-    
-    private int geolocation;
-    
-    private int _order;
+
+    private String geolocation;
 
     public Customer() {
     }
 
-    public Customer(String name, String surname, String sex, int age, String telephone, int card, int geolocation, int order) {
+    public Customer(String name, String surname, String sex, int age, String telephone, int card, String geolocation, int order) {
         this.name = name;
         this.surname = surname;
         this.sex = sex;
@@ -37,7 +34,6 @@ public class Customer {
         this.telephone = telephone;
         this.card = card;
         this.geolocation = geolocation;
-        _order = order;
     }
 
     public Long getId() {
@@ -96,20 +92,12 @@ public class Customer {
         this.card = card;
     }
 
-    public int getGeolocation() {
+    public String getGeolocation() {
         return geolocation;
     }
 
-    public void setGeolocation(int geolocation) {
+    public void setGeolocation(String geolocation) {
         this.geolocation = geolocation;
-    }
-
-    public int get_order() {
-        return _order;
-    }
-
-    public void set_order(int order) {
-        this._order = order;
     }
 
     @Override
@@ -121,8 +109,8 @@ public class Customer {
                 age + " " +
                 telephone + " " +
                 card + " " +
-                geolocation + " " +
-                _order;
+                geolocation + " "
+                ;
     }
 }
 

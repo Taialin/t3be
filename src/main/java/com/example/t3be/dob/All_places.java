@@ -25,9 +25,9 @@ public class All_places {
 
     private String style_of_the_place;
 
-    private Time opening_hours;
+    private String opening_hours;
 
-    private int place_on_map;
+    private String place_on_map;
 
     private String history;
 
@@ -35,7 +35,13 @@ public class All_places {
 
     private String Link_to_the_site;
 
-    public All_places(Long place_category, String name_of_place, String image, int age, Date years, String style_of_the_place, Time opening_hours, int place_on_map, String history, String visit_cost, String link_to_the_site) {
+
+    private String foto_vnutri;
+    private String foto_vid1;
+    private String foto_vid2;
+    private String foto_vid3;
+
+    public All_places(Long place_category, String name_of_place, String image, int age, Date years, String style_of_the_place, String opening_hours, String place_on_map, String history, String visit_cost, String link_to_the_site, String foto_vnutri, String foto_vid1, String foto_vid2, String foto_vid3) {
         this.place_category = place_category;
         this.name_of_place = name_of_place;
         this.image = image;
@@ -47,9 +53,16 @@ public class All_places {
         this.history = history;
         this.visit_cost = visit_cost;
         this.Link_to_the_site = link_to_the_site;
+        this.foto_vnutri =foto_vnutri;
+        this.foto_vid1 = foto_vid1;
+        this.foto_vid2 = foto_vid2;
+        this.foto_vid3 = foto_vid3;
     }
 
     public All_places() {
+    }
+    public Long getPlaceID() {
+        return id;
     }
 
     public Long getId() {
@@ -108,19 +121,19 @@ public class All_places {
         this.style_of_the_place = style_of_the_place;
     }
 
-    public Time getOpening_hours() {
+    public String getOpening_hours() {
         return opening_hours;
     }
 
-    public void setOpening_hours(Time opening_hours) {
+    public void setOpening_hours(String opening_hours) {
         this.opening_hours = opening_hours;
     }
 
-    public int getPlace_on_map() {
+    public String getPlace_on_map() {
         return place_on_map;
     }
 
-    public void setPlace_on_map(int place_on_map) {
+    public void setPlace_on_map(String place_on_map) {
         this.place_on_map = place_on_map;
     }
 
@@ -147,6 +160,35 @@ public class All_places {
     public void setLink_to_the_site(String Link_to_the_site) {
         this.Link_to_the_site = Link_to_the_site;
     }
+    public String getFoto_vnutri() {
+        return foto_vnutri;
+    }
+
+    public void setFoto_vnutri(String foto_vnutri) {
+        this.visit_cost = foto_vnutri;
+    }
+
+    public String getFoto_vid1() {
+        return foto_vid1;
+    }
+
+    public void setFoto_vid1 (String foto_vid1) {this.foto_vid1 = foto_vid1;}
+
+    public String getFoto_vid2() {
+        return foto_vid2;
+    }
+
+    public void setFoto_vid2(String foto_vid2) {
+        this.visit_cost = foto_vid2;
+    }
+
+    public String getFoto_vid3() {
+        return foto_vid3;
+    }
+
+    public void setFoto_vid3(String foto_vid3) {
+        this.visit_cost = foto_vid3;
+    }
 
     @Override
     public String toString() {
@@ -161,6 +203,10 @@ public class All_places {
                 place_on_map + " " +
                 history + " " +
                 visit_cost + " " +
-                Link_to_the_site;
+                Link_to_the_site + " " +
+                foto_vnutri + " " +
+                foto_vid1 + " " +
+                foto_vid2 + " " +
+                foto_vid3;
     }
 }
