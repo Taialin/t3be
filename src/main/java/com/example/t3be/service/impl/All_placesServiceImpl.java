@@ -7,7 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional
@@ -25,8 +28,26 @@ public class All_placesServiceImpl implements All_placesServices {
     }
 
     @Override
+
     public List<All_places> findAll() {
         return (List<All_places>) repository.findAll();
     }
+
+    @Override
+    public List<All_places> findAllByCategory(Long categoryId) {
+        return findAll().stream().filter(place -> categoryId.equals(place.getPlace_category())).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<All_places> findAllById(Long IdId) {
+        return findAll().stream().filter(place -> IdId.equals(place.getPlaceID())).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<All_places> findAllByIds(List<Long> ids) {
+        return findAll().stream().filter(place -> ids.contains(place.getPlaceID())).collect(Collectors.toList());
+    }
+
+
 }
 
